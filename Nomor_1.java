@@ -1,16 +1,11 @@
-import java.util.Scanner;
-
-public class Nomor_1{
-
+public class NumberList {
     public static void main(String[] args) {
-
-        for (int nilai = 1; nilai <= 9; nilai++) {
-
-            System.out.println(nilai);
-        }
-        for (int nilai = 10; nilai <= 100; nilai++){
-
-            System.out.println("M.D Valgiyos Aritonang");
+        for (int i = 1; i <= 100; i++) {
+            if (i <= 9) {
+                System.out.println(i);
+            } else {
+                System.out.println("M.D Valgiyos Aritonang");
+            }
         }
     }
 }
