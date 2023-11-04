@@ -1,61 +1,47 @@
 import java.util.Scanner;
 
-public class Nomor_3 {
-
+public class ZodiacSign {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        boolean repeat = true;
+        Scanner scanner = new Scanner(System.in);
 
-        while (repeat) {
-            int tanggal, bulan;
-            System.out.println("\nMasukkan tanggal lahir atau masukkan 0 0 untuk keluar");
-            System.out.print("Tanggal: ");
-            tanggal = input.nextInt();
-            System.out.print("Bulan: ");
-            bulan = input.nextInt();
+        System.out.print("Masukkan tanggal lahir (contoh: 15): ");
+        int day = scanner.nextInt();
+        System.out.print("Masukkan bulan lahir (contoh: 3): ");
+        int month = scanner.nextInt();
 
-            if (tanggal == 0 && bulan == 0) {
-                System.out.println("Terima kasih :)");
-                repeat = false;
-            } else {
-                String zodiacSign = determineZodiacSign(tanggal, bulan);
-                if (zodiacSign.equals("Invalid")) {
-                    System.out.println("Tanggal yang dimasukkan tidak masuk akal");
-                } else {
-                    System.out.println("Tanggal tersebut mempunyai Zodiac " + zodiacSign);
-                }
-            }
-        }
-        input.close();
-    }
+        String zodiacSign = "";
 
-    public static String determineZodiacSign(int tanggal, int bulan) {
-        if ((bulan == 3 && tanggal >= 21) || (bulan == 4 && tanggal <= 19)) {
-            return "Aries";
-        } else if ((bulan == 4 && tanggal >= 20) || (bulan == 5 && tanggal <= 20)) {
-            return "Taurus";
-        } else if ((bulan == 5 && tanggal >= 21) || (bulan == 6 && tanggal <= 20)) {
-            return "Gemini";
-        } else if ((bulan == 6 && tanggal >= 21) || (bulan == 7 && tanggal <= 22)) {
-            return "Cancer";
-        } else if ((bulan == 7 && tanggal >= 23) || (bulan == 8 && tanggal <= 22)) {
-            return "Leo";
-        } else if ((bulan == 8 && tanggal >= 23) || (bulan == 9 && tanggal <= 22)) {
-            return "Virgo";
-        } else if ((bulan == 9 && tanggal >= 23) || (bulan == 10 && tanggal <= 22)) {
-            return "Libra";
-        } else if ((bulan == 10 && tanggal >= 23) || (bulan == 11 && tanggal <= 21)) {
-            return "Scorpio";
-        } else if ((bulan == 11 && tanggal >= 22) || (bulan == 12 && tanggal <= 21)) {
-            return "Sagittarius";
-        } else if ((bulan == 12 && tanggal >= 22) || (bulan == 1 && tanggal <= 19)) {
-            return "Capricorn";
-        } else if ((bulan == 1 && tanggal >= 20) || (bulan == 2 && tanggal <= 18)) {
-            return "Aquarius";
-        } else if ((bulan == 2 && tanggal >= 19) || (bulan == 3 && tanggal <= 20)) {
-            return "Pisces";
+        if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+            zodiacSign = "Aries";
+        } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+            zodiacSign = "Taurus";
+        } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+            zodiacSign = "Gemini";
+        } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+            zodiacSign = "Cancer";
+        } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+            zodiacSign = "Leo";
+        } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+            zodiacSign = "Virgo";
+        } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+            zodiacSign = "Libra";
+        } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+            zodiacSign = "Scorpio";
+        } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+            zodiacSign = "Sagittarius";
+        } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+            zodiacSign = "Capricorn";
+        } else if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+            zodiacSign = "Aquarius";
+        } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+            zodiacSign = "Pisces";
         } else {
-            return "Invalid";
+            System.out.println("Tanggal lahir tidak valid.");
+            return;
         }
+
+        System.out.println("Zodiak: " + zodiacSign);
+
+        scanner.close();
     }
 }
